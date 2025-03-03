@@ -1,4 +1,5 @@
 
+int penWieght,sliderX,sliderX2;
 color bla=#001219;
 color darkSea=#005F73;
 color sea=#0A9396;
@@ -24,11 +25,12 @@ color black=#000000;
 color selectedColor=#000000;
 void setup(){
   size(700,550);
+  penWieght=1;
+  sliderX=20;
 }
 void draw(){
-  background(255);
   noStroke();
-  fill(80);
+  fill(70);
   rect(0,0,150,550);
   //buttons
   //1
@@ -72,27 +74,109 @@ void draw(){
   fill(red);
   circle(100,195,26);
   //show selected color
+  stroke(0);
   fill(selectedColor);
   rect(15,500,120,30);
+  //eraser button
+  fill(255);
+  rect(37,215,26,30);
+  //pen Size slider
+  stroke(0);
+  line(20,255,134,255);
+  stroke(255,20,20);
+  line(20,255,sliderX,255);
 }
 
 void mousePressed(){
  //1
- if(dist(50,35,mouseX,mouseY)<26)
+ if(dist(50,35,mouseX,mouseY)<13)
    border1=(white);
  //2
- if(dist(100,35,mouseX,mouseY)<26)
+ if(dist(100,35,mouseX,mouseY)<13)
    border2=(white);
  //3
- if(dist(50,75,mouseX,mouseY)<26)
+ if(dist(50,75,mouseX,mouseY)<13)
    border3=(white);
+ //4
+ if(dist(100,75,mouseX,mouseY)<13)
+   border4=(white);
+ //5
+ if(dist(50,115,mouseX,mouseY)<13)
+   border5=(white);
+ //6
+ if(dist(100,115,mouseX,mouseY)<13)
+   border6=(white);
+ //7
+ if(dist(50,155,mouseX,mouseY)<13)
+   border7=(white);
+ //8
+ if(dist(100,155,mouseX,mouseY)<13)
+   border8=(white);
+ //9
+ if(dist(50,195,mouseX,mouseY)<13)
+   border9=(white);
+ //10
+ if(dist(100,195,mouseX,mouseY)<13)
+   border10=(white);
+ //eraser
+ if(mouseX>37 && mouseX<63 && mouseY>215 && mouseY<245)
+   selectedColor=(205);
 }
 void mouseReleased(){
- if(dist(50,35,mouseX,mouseY)<26)
+ if(dist(50,35,mouseX,mouseY)<13){
    border1=(bla);
    selectedColor=(black);
+ }
  //2
- if(dist(100,35,mouseX,mouseY)<26)
+ if(dist(100,35,mouseX,mouseY)<13){
    border2=(bla);
    selectedColor=(darkSea);
+ }
+ //3
+ if(dist(50,75,mouseX,mouseY)<13){
+   border3=(bla);
+   selectedColor=(sea);
+ }
+ //4
+  if(dist(100,75,mouseX,mouseY)<13){
+   border4=(bla);
+   selectedColor=(lake);
+ }
+ //5
+  if(dist(50,115,mouseX,mouseY)<13){
+   border5=(bla);
+   selectedColor=(beige);
+ }
+ //6
+  if(dist(100,115,mouseX,mouseY)<13){
+   border6=(bla);
+   selectedColor=(orange);
+ }
+ //7
+  if(dist(50,155,mouseX,mouseY)<13){
+   border7=(bla);
+   selectedColor=(overRipeOrange);
+ }
+ //8
+  if(dist(100,155,mouseX,mouseY)<13){
+   border8=(bla);
+   selectedColor=(minecraftLava);
+ }
+ //9
+  if(dist(50,195,mouseX,mouseY)<13){
+   border9=(bla);
+   selectedColor=(apple);
+ }
+ //10
+  if(dist(100,195,mouseX,mouseY)<13){
+   border10=(bla);
+   selectedColor=(red);
+ }
+}
+void mouseDragged(){
+  strokeWeight(penWieght);
+  stroke(selectedColor);
+  line(pmouseX,pmouseY,mouseX,mouseY);
+  if(mouseX>20 && mouseX<134 && mouseY>254 && mouseY<246)
+    sliderX=mouseX;
 }
