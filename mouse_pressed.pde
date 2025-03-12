@@ -73,4 +73,15 @@ void mousePressed(){
    penWeight=330-mouseY;
    sliderY=mouseY;
   }
+ //new button
+  if(uiButtonPressed==0 && mouseX>80 && mouseX<120 && mouseY>255 && mouseY<275)
+    canvas.beginDraw();
+    canvas.background(205);
+    canvas.endDraw();
+  //save button
+  if(uiButtonPressed==0 && mouseX>80 && mouseX<120 && mouseY>315 && mouseY<335)
+    selectOutput("pick a name","saveImage");
+  //load button
+  if(uiButtonPressed==0 && mouseX>80 && mouseX<120 && mouseY>285 && mouseY<315)
+    selectInput("load a image","loadImage");
 }

@@ -120,3 +120,21 @@ void draw(){
 void mouseReleased(){
   selectedColorSub=(black);
 }
+void saveImage(File a){
+  if(a!=null){
+    PImage canvas=get(0,0,width,height);
+    canvas.save(a.getAbsolutePath());
+  }
+}
+void loadImage(File a){
+  if(a!=null){
+    int b=0;
+    while(b<10){
+      PImage pic=loadImage(a.getPath());
+      canvas.beginDraw();
+      canvas.image(pic,0,0);
+      canvas.endDraw();
+      b=b+1;
+    }
+  }
+}

@@ -77,15 +77,27 @@ void ui(int x,int y){
   ui.rect(149,265,10,20,0,4,4,0);
   ui.rect(149,265,10,20,0,4,4,0);
   //new
-  ui.rect(80,255,40,20);
+  tactileSquare(80,120,255,275);
   ui.fill(0);
-  ui.textSize(20);
-  ui.text("New",80,275);
-  fill(205);
+  ui.rect(80,255,40,20);
+  ui.fill(255);
+  ui.textSize(14);
+  ui.text("New",87,269);
   //load
+  ui.stroke(0);
+  tactileSquare(80,120,285,305);
+  ui.fill(0);
   ui.rect(80,285,40,20);
+  ui.fill(255);
+  ui.text("load",87,299);
   //save
+  ui.stroke(0);
+  tactileSquare(80,120,315,335);
+  ui.fill(0);
   ui.rect(80,315,40,20);
+  ui.fill(255);
+  ui.text("save",87,329);
+  //
   ui.popMatrix();
   ui.endDraw();
   if (E==150) 
