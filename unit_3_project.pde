@@ -1,5 +1,7 @@
 
-int sliderY,penWeight,uiButtonPressed,C,D,E;
+boolean stampON;
+PImage microwave,microwaveUi,download;
+int sliderY,penWeight,uiButtonPressed,C,D,E,stampX,stampY,stampXsize,stampYsize;
 color bla=#001219;
 color darkSea=#005F73;
 color sea=#0A9396;
@@ -22,8 +24,7 @@ color border9=#000000;
 color border10=#000000;
 color white=#FFFFFF;
 color black=#000000;
-PGraphics canvas,uiHider;
-PGraphics ui;
+PGraphics canvas,stamp,ui;
 color selectedColor=#000000;
 color selectedColorSub=#000000;
 void setup(){
@@ -35,8 +36,12 @@ void setup(){
   D=150;
   E=150;
   canvas=createGraphics(700,550);
-  ui=createGraphics(700, 550);
-  //uiHider=createGraphics(700,550);
+  ui=createGraphics(700,550);
+  stamp=createGraphics(700,550);
+  microwave=loadImage("microwave.png");
+  microwaveUi=loadImage("microwave.png");
+  download=loadImage("download.png");
+  stampON=false;
 }
 void draw(){
   background(205);
@@ -116,14 +121,18 @@ void draw(){
   //10
   if(mousePressed && dist(100,195,mouseX,mouseY)<13)
     selectedColorSub=(white);
+  stampX=(mouseX-(stampXsize/2));
+  stampXsize=75+penWeight;
+  stampY=(mouseY-(stampYsize/2));
+  stampYsize=75+penWeight;
 }
 void mouseReleased(){
   selectedColorSub=(black);
 }
 void saveImage(File a){
   if(a!=null){
-    PImage canvas=get(0,0,width,height);
-    canvas.save(a.getAbsolutePath());
+    PImage canvs=canvas.get(0,0,width,height);
+    canvs.save(a.getAbsolutePath());
   }
 }
 void loadImage(File a){

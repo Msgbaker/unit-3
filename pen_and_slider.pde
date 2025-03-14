@@ -1,5 +1,13 @@
 void mouseDragged(){
-  if(mouseX>E){
+  if(mouseX>E &&stampON==true){
+    canvas.beginDraw();
+    microwave.resize(stampXsize,95+penWeight);
+    canvas.image(microwave,stampX,stampY);
+    canvas.endDraw();
+    image(canvas,0,0);
+    ui(0,0);
+  }
+  if(mouseX>E && stampON==false){
     canvas.beginDraw();
     canvas.strokeWeight(penWeight);
     canvas.stroke(selectedColor);

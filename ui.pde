@@ -53,7 +53,10 @@ void ui(int x,int y){
   ui.rect(15,500,120,30);
   //eraser button
   ui.fill(255);
+  tactileSquare(37,63,215,245);
   ui.rect(37,215,26,30);
+  download.resize(26,30);
+  ui.image(download,37,215);
   //pen Size slider
   ui.strokeWeight(2);
   ui.stroke(0);
@@ -61,7 +64,8 @@ void ui(int x,int y){
   ui.stroke(255,20,20);
   ui.line(50,330,50,sliderY);
   ui.stroke(0);
-  ui.circle(50,sliderY,11);
+  tactile2(50,sliderY,6);
+  ui.circle(50,sliderY,12);
   ui.noStroke();
   ui.noFill();
   ui.rect(44,250,12,12);
@@ -97,6 +101,12 @@ void ui(int x,int y){
   ui.rect(80,315,40,20);
   ui.fill(255);
   ui.text("save",87,329);
+  //stamp
+  ui.stroke(0);
+  tactileSquare(34,125,369,470);
+  ui.rect(34,369,91,101);
+  microwaveUi.resize(90,100);
+  ui.image(microwaveUi,35,370);
   //
   ui.popMatrix();
   ui.endDraw();
