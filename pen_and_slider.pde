@@ -1,5 +1,5 @@
 void mouseDragged(){
-  if(mouseX>E &&stampON==true){
+  if(mouseX>E && stampON==true){
     canvas.beginDraw();
     microwave.resize(stampXsize,95+penWeight);
     canvas.image(microwave,stampX,stampY);

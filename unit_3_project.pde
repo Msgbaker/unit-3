@@ -119,12 +119,13 @@ void draw(){
   if(mousePressed && dist(50,195,mouseX,mouseY)<13)
     selectedColorSub=(white);
   //10
-  if(mousePressed && dist(100,195,mouseX,mouseY)<13)
+  
     selectedColorSub=(white);
-  stampX=(mouseX-(stampXsize/2));
-  stampXsize=75+penWeight;
-  stampY=(mouseY-(stampYsize/2));
-  stampYsize=75+penWeight;
+    stampX=mouseX-(stampXsize/2);
+    stampXsize=75+penWeight;
+    stampY=mouseY-(stampYsize/2);
+    stampYsize=75+penWeight;
+  
 }
 void mouseReleased(){
   selectedColorSub=(black);

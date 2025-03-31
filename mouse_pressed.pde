@@ -60,9 +60,10 @@ void mousePressed(){
    stampON=false;
  }
  //eraser
- if(mouseX>37 && mouseX<63 && mouseY>215 && mouseY<245)
+ if(mouseX>37 && mouseX<63 && mouseY>215 && mouseY<245){
    selectedColor=(205);
    stampON=false;
+ }
  //slider
  //adding penWieght
  if(uiButtonPressed==0 && mouseX>44 && mouseX<56 && mouseY>250 && mouseY<262 && sliderY>271){
@@ -96,10 +97,7 @@ void mousePressed(){
   if(uiButtonPressed==0 && mouseX>80 && mouseX<120 && mouseY>285 && mouseY<315)
     selectInput("load a image","loadImage");
   //stamp
-  if(mouseX>34 && mouseX<125 && mouseY>369 && mouseY<470 && stampON==false){
-    stampON=true;
-  }else{
-    if(mouseX>34 && mouseX<125 && mouseY>369 && mouseY<470 && stampON==true)
-    stampON=false;
-  }
+  if(mouseX>34 && mouseX<125 && mouseY>369 && mouseY<470 && stampON==true) stampON=false;  
+  if(mouseX>34 && mouseX<125 && mouseY>369 && mouseY<470 && stampON==false) stampON=true;
+  print(stampON);
 }
